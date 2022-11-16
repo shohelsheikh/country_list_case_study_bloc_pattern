@@ -1,5 +1,5 @@
-name: country_list_case_study
-description: This project contains a country list with search functionality and detailing of selected country.This project contains the getx state management pattern.
+name: country_list_case_study_bloc_pattern
+description: This project contains a country list with search functionality and detailing of selected country.This project contains the bloc state management pattern.
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -30,32 +30,35 @@ dependencies:
   flutter:
     sdk: flutter
 
-  #  toast dependency
-  fluttertoast: ^8.0.8
+
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  cupertino_icons: ^1.0.2
+
+
+  # for bloc
+  flutter_bloc: ^7.2.0
 
   #  network dependency
-  dio: ^4.0.4
-  http: ^0.13.4
+  dio: ^4.0.0
 
-  # getx state management dependency
-  get: ^4.6.1
+  # for building responsive app
+  sizer: ^2.0.15
+
+  #  network image dependency
+  cached_network_image: ^3.0.0
 
   # for dateformat or number format and other.
   intl: ^0.17.0
 
-  # for building responsive app
-  sizer: ^2.0.15
+
+  #  toast dependency
+  fluttertoast: ^8.0.8
 
   # for store data in local database
   hive: ^2.0.5
   path_provider: ^2.0.9
 
-#  network image library
-  cached_network_image: ^3.0.0
-
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^1.0.2
 
 dev_dependencies:
   flutter_test:
@@ -67,7 +70,7 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
-  test: ^1.21.1
+
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
@@ -78,13 +81,6 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
-
-
-  assets:
-    - assets/images/
-
-
-
 
   # To add assets to your application, add an assets section, like this:
   # assets:

@@ -1,18 +1,18 @@
-import 'package:country_list_case_study/routes/app_pages.dart';
-import 'package:country_list_case_study/routes/app_routes.dart';
-import 'package:country_list_case_study/utils/color_constant.dart';
+import 'package:country_list_case_study_bloc_pattern/business_logic/bloc/country_list_bloc/country_list_bloc.dart';
+import 'package:country_list_case_study_bloc_pattern/presentation/screens/country_list/country_list_page.dart';
+import 'package:country_list_case_study_bloc_pattern/presentation/screens/splash_page.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:hive/hive.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:country_list_case_study_bloc_pattern/utils/color_constant.dart';
 import 'package:sizer/sizer.dart';
 
-import 'base/controller/hive_db_controller.dart';
+import 'data/localdb/hive_db_manager.dart';
+import 'locales/locale_constant.dart';
 
-GlobalKey<NavigatorState> globalKey = GlobalKey();
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  Get.put(HiveDBController());   // calls the controller of hive db
+  HiveDBManager.instance.onInitLocalDb(); // initialize the hive db
   runApp(const MyApp());
 }
 
@@ -21,14 +21,22 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-   // for responsive app we have used sizer.
+    // Sizer is for responsive design
     return Sizer(builder: (context, orientation, deviceType) {
-      return GetMaterialApp(
-          navigatorKey: globalKey,
-          debugShowCheckedModeBanner: false,
-          initialRoute: AppRoutes.SPLASH_SCREEN,
-          getPages: AppPages.pages,
-          defaultTransition: Transition.rightToLeft);
+      return MaterialApp(
+        title: StringsConstant.appName,
+        theme: ThemeData(
+          backgroundColor: Colors.white,
+          primaryColor: ColorConstant.colorApp,
+        ),
+        home: BlocProvider(
+          create: (context) => CountrylistBloc(),  // country bloc used in app.
+          child: SplashPage(),  // jump to splash screen
+        ),
+      );
     });
   }
+
 }
+
+

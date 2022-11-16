@@ -1,10 +1,10 @@
-import 'package:country_list_case_study/base/repository/country_list_repo.dart';
+import 'package:country_list_case_study_bloc_pattern/data/dataproviders/network/api_call.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   test("Fetch Country List Api", () async {
     bool done = false;
-    var fetch = (await CountryListRepo.all_country_list_web());
+    var fetch = (await Api.getCountryList()); // get the country list from api..
     if (fetch != null) {
       done = true;
     }

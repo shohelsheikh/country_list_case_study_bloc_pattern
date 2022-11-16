@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'dart:io';
-import 'package:country_list_case_study/utils/color_constant.dart';
 import 'package:flutter/material.dart';
 
+import 'color_constant.dart';
 import 'progress_dialog/WidgetPosition.dart';
 
 Future<bool> checkInternetConnection() async {

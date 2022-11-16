@@ -1,5 +1,5 @@
 
-import 'package:country_list_case_study/extensions/util_extensions.dart';
+ import 'package:country_list_case_study_bloc_pattern/extensions/util_extensions.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';

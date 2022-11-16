@@ -1,6 +1,6 @@
 {
-    "name": "country_list_case_study",
-    "short_name": "country_list_case_study",
+    "name": "country_list_case_study_bloc_pattern",
+    "short_name": "country_list_case_study_bloc_pattern",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

@@ -1,9 +1,10 @@
-# country_list_case_study
+# country_list_case_study_bloc_pattern
 
-This project contains a country list with search functionality and detailing of selected country.This project contains the getx state management pattern.
+This project contains a country list with search functionality and detailing of selected country.This project contains the bloc state management pattern.
 
 Also this contains unit test case for list.
 
+A new Flutter project.
 
 ## Getting Started
 
